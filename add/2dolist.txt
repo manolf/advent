@@ -1,0 +1,29 @@
+2do list:
+
+----done----
+database
+user registration
+admin panel
+crud design eingabe wod
+navbar router
+Kalender erstellen
+
+
+----high prio----
+
+Begrüßungskarussel
+Verlinkung Kalender
+Animation Opening
+SinglePage Türchen
+Wodsuche
+
+
+
+----low prio----
+imageicon elf in adressleiste
+Rangliste 
+
+
+eigene domäne und website
+instagram
+emailserver bei registration - newsletter?

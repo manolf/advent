@@ -1,0 +1,66 @@
+                    <div class="col mb-3 ">
+                        <div class="card px-1 py-1 bg-light">
+                            <h5 class="card-title text-secondary"><?= $status ?></h5>
+                            <img src="img/icon/penguin.jpg" class="card-img-top vh-5">
+                   <div class="card-body">
+                                <h3 class="card-text text-success font-weight-bold"><?= $name ?> <span></span></h3>
+                                <h6 class="card-text">Equipment: <?= $equipment ?> </h6>
+                                <h6 class='card-text'><span class='font-weight-bold'>Muskelpartien: </span> <?= $trainedParts ?>
+                                </h6>
+                                <h6 class='card-text'><span class='font-weight-bold'>Dauer (min): </span> <?= $durationInMinutes ?>
+                                </h6>
+                                <h7 class="card-text"><span class="font-weight-bold">Schwierigkeitsgrad</span>:</span> <?= $difficulty ?></h7>
+                                <p><span class="font-weight-bold">Beschreibung</span>: <?= $description ?> </p>
+
+                            </div>
+                            <div class="card-footer text-center">
+                                <a href="delete.php?id=<?= $wodId ?>" class="btn btn-outline-danger  mx-auto">Delete </a>
+                                <a href="update.php?id=<?= $wodId ?>" class="btn btn-outline-success mx-auto">Update </a>
+                            </div>
+                        </div>
+                    <!-- </div> -->
+
+                            <!-- <fieldset>
+            <legend>Update medium</legend> -->
+        <!-- bootstrap version -->
+        <!-- <form action="actions/a_update.php" method="post">
+            <div class="container font-weight-bold">
+
+                <div class="form-group">
+                    <label for="firstname">Name: </label>
+                    <input type="text" class="form-control" name="name" value="<?php echo $data['name'] ?>" />
+
+                    <label for="title">Hobbies: </label>
+                    <input type="text" class="form-control" name="hobbies" rows="2" value="<?php echo $data['hobbies'] ?>" />
+
+                    <label for="image">Image: </label>
+                    <input type="text" class="form-control" name="image" value="<?php echo $data['image'] ?>" />
+
+                    <label for="type">Type: </label>
+                    <input type="text" class="form-control" name="type" value="<?php echo $data['type'] ?>" />
+
+                    <label for="publishDate">Age: </label>
+                    <input type="text" class="form-control" name="age" value="<?php echo $data['age'] ?>" />
+
+                    <label for="description">Description: </label>
+                    <input type="text" class="form-control" name="description" rows="6" value="<?php echo $data['description'] ?>" />
+
+                    <label for="address">Location: </label>
+                    <input type="text" class="form-control" name="street" value="<?php echo $data['street'] ?>" />
+                    <input type="text" class="form-control" name="zipcode" value="<?php echo $data['zipcode'] ?>" />
+                    <input type="text" class="form-control" name="city" value="<?php echo $data['city'] ?>" />
+
+                    <input type="hidden" name="animalID" value="<?php echo $data['animalID'] ?>" />
+                    <input type="hidden" name="addressID" value="<?php echo $data['addressID'] ?>" />
+
+
+                    <input class="form-control btn btn-outline-success mt-3 mb-3" type="submit" name="submit" value="Save changes" />
+
+                    <a href="admin.php" class="btn btn-block btn-outline-warning">Back</a>
+
+                </div>
+
+
+
+            </div>
+        </form> -->

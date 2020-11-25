@@ -85,6 +85,27 @@ SELECT * FROM calendar
 Full JOIN wod ON calendar.wodId = wod.wodId
 
 
+SELECT calendar.dayId, wod.wodName, wod.points, wod.difficulty FROM calendar
+LEFT JOIN wod ON calendar.wodId = wod.wodId
+where calendar.userId = 2
+UNION
+SELECT calendar.dayId, wod.wodName, wod.points, wod.difficulty FROM calendar
+RIGHT JOIN wod ON calendar.wodId = wod.wodId
+where calendar.userId = 2
+
+--> YESSS! UNION + INNERJOIN
+SELECT * FROM
+(SELECT calendar.dayId, wod.wodName, wod.points, wod.difficulty FROM calendar
+LEFT JOIN wod ON calendar.wodId = wod.wodId
+where calendar.userId = 2
+UNION
+SELECT calendar.dayId, wod.wodName, wod.points, wod.difficulty FROM calendar
+RIGHT JOIN wod ON calendar.wodId = wod.wodId
+where calendar.userId = 2) a 
+INNER JOIN day d ON d.dayId = a.dayId
+
+
+
 
 --> ABFRAGE WOD AUS DATABASE
 
@@ -104,3 +125,36 @@ and not exists(select *
               where c.wodId = wod.wodId
               and c.userId = 3)
 
+
+
+-->update icons
+
+UPDATE `day` SET `icon` = './img/icon/1.png' WHERE `day`.`dayId` = 1;
+UPDATE `day` SET `icon` = './img/icon/2.png' WHERE `day`.`dayId` = 2;
+UPDATE `day` SET `icon` = './img/icon/3.png' WHERE `day`.`dayId` = 3;
+UPDATE `day` SET `icon` = './img/icon/4.png' WHERE `day`.`dayId` = 4;
+UPDATE `day` SET `icon` = './img/icon/5.png' WHERE `day`.`dayId` = 5;
+UPDATE `day` SET `icon` = './img/icon/6.png' WHERE `day`.`dayId` = 6;
+UPDATE `day` SET `icon` = './img/icon/7.png' WHERE `day`.`dayId` = 7;
+UPDATE `day` SET `icon` = './img/icon/8.png' WHERE `day`.`dayId` = 8;
+UPDATE `day` SET `icon` = './img/icon/9.png' WHERE `day`.`dayId` = 9;
+UPDATE `day` SET `icon` = './img/icon/10.png' WHERE `day`.`dayId` = 10;
+
+UPDATE `day` SET `icon` = './img/icon/11.png' WHERE `day`.`dayId` = 11;
+UPDATE `day` SET `icon` = './img/icon/12.png' WHERE `day`.`dayId` = 12;
+UPDATE `day` SET `icon` = './img/icon/13.png' WHERE `day`.`dayId` = 13;
+UPDATE `day` SET `icon` = './img/icon/14.png' WHERE `day`.`dayId` = 14;
+UPDATE `day` SET `icon` = './img/icon/15.png' WHERE `day`.`dayId` = 15;
+UPDATE `day` SET `icon` = './img/icon/16.png' WHERE `day`.`dayId` = 16;
+UPDATE `day` SET `icon` = './img/icon/17.png' WHERE `day`.`dayId` = 17;
+UPDATE `day` SET `icon` = './img/icon/18.png' WHERE `day`.`dayId` = 18;
+UPDATE `day` SET `icon` = './img/icon/19.png' WHERE `day`.`dayId` = 19;
+UPDATE `day` SET `icon` = './img/icon/20.png' WHERE `day`.`dayId` = 20;
+UPDATE `day` SET `icon` = './img/icon/21.png' WHERE `day`.`dayId` = 21;
+UPDATE `day` SET `icon` = './img/icon/22.png' WHERE `day`.`dayId` = 22;
+UPDATE `day` SET `icon` = './img/icon/23.png' WHERE `day`.`dayId` = 23;
+UPDATE `day` SET `icon` = './img/icon/24.png' WHERE `day`.`dayId` = 24;
+
+
+
+UPDATE `day` SET `text` = 'Willkommen im Advent! Wir freuen uns, dass du dabei bist :-)\r\n\r\nDas ist die Geschichte von Elf Hanno, der sehr gerne soooo stark wäre wie auf dem Bild, das er täglich vor Augen hat. Er möchte nämlich gerne Santa helfen, die Geschenke auszutragen. Wenn er es bis dahin schaffen sollte, dieses schwere Paket hochzuheben, darf er zum ersten Mal dabei sein. \r\n', `elfPic` = './img/strong_elf.png' WHERE `day`.`dayId` = 1;

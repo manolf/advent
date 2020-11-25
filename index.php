@@ -90,30 +90,31 @@ include('navbar.php');
     <!--   <div class="container row row-cols-md-2 row-cols-lg-3 row-cols-xs-1 mx-auto"> -->
     <div class="container">
 
-        <div class="window" id="1"> 1 </div>
-        <div class="window" id="2"> 2 </div>
-        <div class="window" id="3"> 3 </div>
-        <div class="window" id="4"> 4 </div>
-        <div class="window" id="5"> 5 </div>
-        <div class="window" id="6"> 6 </div>
-        <div class="window" id="7"> 7 </div>
-        <div class="window" id="8"> 8 </div>
-        <div class="window" id="9"> 9 </div>
-        <div class="window" id="10"> 10 </div>
-        <div class="window" id="11"> 11 </div>
-        <div class="window" id="12"> 12 </div>
-        <div class="window" id="13"> 13 </div>
-        <div class="window" id="14"> 14 </div>
-        <div class="window" id="15"> 15 </div>
-        <div class="window" id="16"> 16 </div>
-        <div class="window" id="17"> 17 </div>
-        <div class="window" id="18"> 18 </div>
-        <div class="window" id="19"> 19 </div>
-        <div class="window" id="20"> 20 </div>
-        <div class="window" id="21"> 21 </div>
-        <div class="window" id="22"> 22 </div>
-        <div class="window" id="23"> 23 </div>
-        <div class="window" id="24"> 24 </div>
+        <div class="window" id="1" style="background: white"><img src="./img/icon/1.png" style="width: 150px; height: 150px" alt="">
+        </div>
+        <div class="window" id="2"> <img src="./img/icon/2.png" style="width: 150px; height: 150px" alt=""> </div>
+        <div class="window" id="3"> <img src="./img/icon/3.png" style="width: 150px; height: 150px" alt=""> </div>
+        <div class="window" id="4"> <img src="./img/icon/4.png" style="width: 150px; height: 150px" alt=""> </div>
+        <div class="window" id="5"> <img src="./img/icon/5.png" style="width: 150px; height: 150px" alt=""> </div>
+        <div class="window" id="6"> <img src="./img/icon/6.png" style="width: 150px; height: 150px" alt=""> </div>
+        <div class="window" id="7"> <img src="./img/icon/7.png" style="width: 150px; height: 150px" alt=""> </div>
+        <div class="window" id="8"> <img src="./img/icon/8.png" style="width: 150px; height: 150px" alt=""> </div>
+        <div class="window" id="9"> <img src="./img/icon/9.png" style="width: 150px; height: 150px" alt=""> </div>
+        <div class="window" id="10"> <img src="./img/icon/10.png" style="width: 150px; height: 150px" alt=""> </div>
+        <div class="window" id="11"> <img src="./img/icon/11.png" style="width: 150px; height: 150px" alt=""> </div>
+        <div class="window" id="12"> <img src="./img/icon/12.png" style="width: 150px; height: 150px" alt=""> </div>
+        <div class="window" id="13"> <img src="./img/icon/13.png" style="width: 150px; height: 150px" alt=""> </div>
+        <div class="window" id="14"> <img src="./img/icon/14.png" style="width: 150px; height: 150px" alt=""> </div>
+        <div class="window" id="15"> <img src="./img/icon/15.png" style="width: 150px; height: 150px" alt=""> </div>
+        <div class="window" id="16"> <img src="./img/icon/16.png" style="width: 150px; height: 150px" alt=""> </div>
+        <div class="window" id="17"> <img src="./img/icon/17.png" style="width: 150px; height: 150px" alt=""> </div>
+        <div class="window" id="18"> <img src="./img/icon/18.png" style="width: 150px; height: 150px" alt=""> </div>
+        <div class="window" id="19"> <img src="./img/icon/19.png" style="width: 150px; height: 150px" alt=""> </div>
+        <div class="window" id="20"> <img src="./img/icon/20.png" style="width: 150px; height: 150px" alt=""> </div>
+        <div class="window" id="21"> <img src="./img/icon/21.png" style="width: 150px; height: 150px" alt=""> </div>
+        <div class="window" id="22"> <img src="./img/icon/22.png" style="width: 150px; height: 150px" alt=""> </div>
+        <div class="window" id="23"> <img src="./img/icon/23.png" style="width: 150px; height: 150px" alt=""> </div>
+        <div class="window" id="24"> <img src="./img/icon/24.png" style="width: 150px; height: 150px" alt=""> </div>
 
 
 

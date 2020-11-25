@@ -79,7 +79,7 @@ $today = 6;
    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
 </head>
 
-<body>
+<body style="background:green">
 
    <div class="jumbotron jumbotron-fluid bg-dark text-white">
       <div class="container">
@@ -112,13 +112,16 @@ $today = 6;
 
       <?php
 
-      //Full Join
-      $sql = "SELECT * FROM calendar
-                LEFT JOIN wod ON calendar.wodId = wod.wodId
-                where calendar.userId = " . $_SESSION['user'] . "   UNION
-                SELECT * FROM calendar
-                RIGHT JOIN wod ON calendar.wodId = wod.wodId
-                where calendar.userId = " . $_SESSION['user'];
+      //Full Join + Inner Join 
+      $sql = "SELECT * FROM
+      (SELECT calendar.dayId, wod.wodName, wod.points, wod.difficulty FROM calendar
+      LEFT JOIN wod ON calendar.wodId = wod.wodId
+      where calendar.userId = " . $_SESSION['user'] . " 
+      UNION
+      SELECT calendar.dayId, wod.wodName, wod.points, wod.difficulty FROM calendar
+      RIGHT JOIN wod ON calendar.wodId = wod.wodId
+      where calendar.userId = " . $_SESSION['user'] . " ) a 
+      INNER JOIN day d ON d.dayId = a.dayId";
 
 
       $result = mysqli_query($conn, $sql);
@@ -130,77 +133,52 @@ $today = 6;
             $day = $row['dayId'];
             $wodName = $row['wodName'];
             $points = $row['points'];
+            $level = $row['difficulty'];
+            $icon = $row['icon'];
             $displayId = $day . "alpha";
+            //echo "hello" . $icon;
 
-            echo "<div class='window secondary' id='$day'>";
-            // echo "<div class='window secondary' id='$day'><span class='text-success d-flex justify-content-end align-items-baseline mt-1 mr-1'><i id='close' class='fa fa-remove style='color:darkred;'></i></span>";
-            echo "<span class='text-success number'>$day </span>";
-            echo "<p class='text-secondary'>$wodName</p>";
-            echo "<p class='text-secondary'>$points</p>  ";
-            echo "<div id='$displayId' style='display:none'>";
+      ?>
 
-            echo "<form action='' method='POST'>";
-            echo "<h4 class='text-success'>Choose your kind of wod: </i></h4>";
-            // echo "<hr>";
-            echo "<p>LEVEL: ";
-            echo "<select name='difficulty' id='level'>";
-            echo " <option> ---- Schwierigkeitsgrad ----- </option>";
-            echo "<option value='1' name='difficulty' class='form-control'> easy</option>";
-            echo "<option value='2' name='difficulty' class='form-control'> intermediate</option>";
-            echo "<option value='3' name='difficulty' class='form-control'> hard</option>";
-            echo "<option value='4' name='difficulty' class='form-control'> crossfit</option>";
-            echo "<option value='5' name='difficulty' class='form-control'> hanni</option>";
-            echo "</select></p>";
-            echo "<hr>";
-            echo "<p>DURATION:<input type='text' name='durationInMinutes' placeholder='max Dauer in min' /></p>";
-            echo "<hr>";
-            echo "<p>EQUIPMENT:<input type='text' name='equipment' placeholder='bodyweight,  etc..' /> </p>";
-            echo "<hr>";
-
-            echo "<input class='btn btn-outline-success m-2' type='submit' name='getWorkout' value='Get your Workout!'/>";
-            echo "<a href='home.php' class='btn btn-outline-warning'> Zurück</a>";
-            echo "</form>";
-            // echo "<button type='submit' class='btn btn-outline-success d-flex justify-content-stretch '>";
-            // echo "<center>Get your Wod!</center>";
-            // echo "</button>";
-            echo "</div>";
-            echo "</div>";
+            <form action="day.php" method='post'>
+               <div class="window secondary bild_beschriftung" id="<?php echo $day ?>">
+                  <img src="<?php echo $icon ?>" style="width: 150px; height: 150px;" alt="icon">
+                  <span class='text-success erst'> <a href='day.php?dayId=<?php echo $day ?>' class='btn btn-outline-danger btn-sm'>now? </a> </span>
+                  <span class='text-light wod'"><?php echo $wodName ?></p>
+                  <span class='text-light level'><?php echo $level ?></span>
+                  <span class='text-light points'><?php echo $points ?></span>
+                  <input type='hidden' name='dayId' value=<?php echo $day ?> />
+                  <!-- <input class='btn btn-outline-success m-2' type='submit' value='Go!' />
+                  <a href='home.php' class='btn btn-outline-warning'> Zurück</a>
+                  <a href='day.php?dayId=<?php echo $day ?>' class='btn btn-outline-danger btn-sm'>now? </a> -->
+               </div>
 
 
-            //GET WOD START -->Besser eigene page... 
-            // if (isset($_POST["getWorkout"])) {
+            </form>
 
+            <!-- 
 
-            //    echo 'jaja, ein Elfe arbeitet bereits daran..';
+            echo " <form action='day.php' method='POST'>";
+                     echo "<div class='window secondary' id='$day'>";
+                        // echo "<div class='window secondary' id='$day'><span class='text-success d-flex justify-content-end align-items-baseline mt-1 mr-1'><i id='close' class='fa fa-remove style=' color:darkred;'></i></span>";
+                           echo "<span class='text-success number'>$day </span>";
+                           echo "<p class='text-secondary'>$wodName</p>";
+                           echo "<p class='text-secondary'>$points</p> ";
+                           echo "<div id='$displayId' style='display:none'>";
 
-            //    $userId = $_SESSION['user'];
-            //    $sql3 = "SELECT * from wod
-            //    where wod.difficulty = 2
-            //    and wod.equipment like '%bodyweight'
-            //    and wod.durationInMinutes <= 10
-            //    and not exists(select *
-            //                  from calendar c
-            //                  where c.wodId = wod.wodId
-            //            and c.userId = 3)";
+                              echo "<input type='hidden' name='dayId' value=$day />";
+                              echo "<input class='btn btn-outline-success m-2' type='submit' name='getWorkout' value='Get your Workout!' />";
+                              echo "<a href='home.php' class='btn btn-outline-warning'> Zurück</a>";
 
+                              // echo "<button type='submit' class='btn btn-outline-success d-flex justify-content-stretch '>";
+                                 // echo "<center>Get your Wod!</center>";
+                                 // echo "</button>";
+                              echo "</div>";
+                           echo "</div>";
+                        echo "
+            </form>"; -->
 
-
-            //    if ($conn->query($sql3) === TRUE) {
-            //       echo "<div class='text-dark pt-2 pb-2'>";
-            //       echo "<p><center><b>Workout kommt...</b></center></p>";
-            //       echo "<p><center><b><New Record Successfully Created</b></center></p>";
-            //       header("refresh:2; url=home.php");
-
-            //       echo "</div>";
-            //    } else {
-            //       echo "Error " . $sql . ' ' . $conn->connect_error;
-            //    }
-            // }
-
-
-            //GET WOD END
-
-
+      <?php
          }
       } else {
 
@@ -335,22 +313,24 @@ $today = 6;
       })
 
       //Funktion für die clickable Kästchen
-      $('.window').on('click', function() {
-         console.log("hello");
-         //  $(this).toggleClass('clicked');
-         console.log($(this));
-         $(this).addClass('clicked');
 
+      //deactivated start
+      // $('.window').on('click', function() {
+      //    console.log("hello");
+      //    //  $(this).toggleClass('clicked');
+      //    console.log($(this));
+      //    $(this).addClass('clicked');
+      //deactivated end
 
-         // console.log("hello" + $(this).find(".test"));
-         // console.log($(this).next());
-         // console.log($(this).children()[0]);
-         // console.log($(this).children()[1].id);
-         // console.log($(this).children()[2].id);
-         // console.log($(this).children()[3].id);
-         // console.log($(this).children()[4].id);
+      // console.log("hello" + $(this).find(".test"));
+      // console.log($(this).next());
+      // console.log($(this).children()[0]);
+      // console.log($(this).children()[1].id);
+      // console.log($(this).children()[2].id);
+      // console.log($(this).children()[3].id);
+      // console.log($(this).children()[4].id);
 
-         show($(this).children()[3].id);
+      show($(this).children()[3].id);
 
       });
 

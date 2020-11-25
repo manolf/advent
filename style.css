@@ -1,4 +1,4 @@
-.card:hover {
+/* .card:hover {
   transform: scale(1.05);
 }
 
@@ -9,18 +9,18 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8);
   width: 100%;
   height: 600px;
-}
+} */
 
-.icon {
+/* .icon {
   width: 70px;
   height: 70px;
   border-radius: 50%;
-}
+} */
 
 .jumbotron {
   background: url("https://cdn.pixabay.com/photo/2016/03/31/15/03/background-1292962_960_720.png")
     no-repeat center center;
-  background-size: 100% 50%;
+  background-size: 100% 100%;
 }
 
 /* .row {
@@ -30,7 +30,7 @@
 } */
 
 .container {
-  background-color: green;
+  background-color: darkgreen;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -58,9 +58,9 @@
   width: 30%;
 }
 
-/*
+/******************************
 WINDOW-STYLING
-*/
+******************************/
 
 .window {
   width: 150px;
@@ -90,11 +90,11 @@ WINDOW-STYLING
 
 .clicked {
   /* transform: scale(1.3); */
-  width: 400px;
-  height: 400px;
+  /* width: 400px;
+  height: 400px; */
   background-color: white;
   border-radius: 5pt;
-  border: 2pt solid green;
+  /* border: 2pt solid green; */
   transition: 1s;
   /* -webkit-animation: rotate-top 1s linear; */
 }
@@ -102,6 +102,38 @@ WINDOW-STYLING
 .window.clicked p {
   color: black;
   font-size: 1rem;
+}
+
+.bild_beschriftung {
+  position: relative;
+}
+.bild_beschriftung img {
+  display: block;
+  background: darkred;
+}
+
+.erst {
+  position: absolute;
+  top: 0;
+  /* width: 400px;
+  color: #fff; */
+  text-align: center;
+  height: 2.5em;
+  /* line-height: 2.5em;
+  border-top: 1px solid #ababab; */
+  /* background: #404040; /* Fallback IE 6-8 */
+  /* background-color: rgba(40, 40, 40, 0.6);  */
+}
+
+.wod {
+  position: absolute;
+  left: 5px;
+  top: 25px;
+}
+.level {
+  position: absolute;
+  left: 0px;
+  top: 27px;
 }
 
 /* .window.show {
@@ -121,6 +153,22 @@ WINDOW-STYLING
 /* Test Karussell  */
 
 /* Ende Karussell  */
+
+/******************************
+DAY
+******************************/
+.container-day {
+  /* background: white; */
+  width: 60%;
+}
+
+.imageElf {
+  object-fit: cover;
+  background: green;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
 
 @media (max-width: 500px) {
   .card {

@@ -94,6 +94,7 @@ if ($_GET['wodId']) {
                         <option value="2" name='difficulty' class='form-control'> intermediate</option>
                         <option value="3" name='difficulty' class='form-control'> hard</option>
                         <option value="4" name='difficulty' class='form-control'> crossfit</option>
+                        <option value="5" name='difficulty' class='form-control'> hanni</option>
                     </select>
 
                     <br>

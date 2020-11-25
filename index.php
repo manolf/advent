@@ -37,6 +37,52 @@ include('navbar.php');
     </div>
 
 
+    <div class="container my-5 z-depth-1 rounded">
+        <!--Section: Content-->
+        <section class="dark-grey-text">
+
+            <div class="row pr-lg-5">
+                <div class="col-md-7 mb-4">
+
+                    <div class="view">
+                        <img src='./img/boxjump.png' alt="boxjump" style="width: 472px; height: 482px" class="img-fluid mt-4 rounded" alt="smaple image">
+                    </div>
+
+                </div>
+                <div class="col-md-5 d-flex align-items-center mb-4">
+                    <div>
+
+                        <h3 class="font-weight-bold mb-4"> HURRA...</h3>
+
+                        <p>... bald ist soweit! Bald ist endlich Dezember und es wird ein sportlich besinnlicher Monat!
+                            <br><strong> Was solltest du noch wissen?</strong> Die Elfen lassen dir die Wahl! Du hast die Möglichkeit zwischen verschiedenen Levels zu wählen. <br></p>Bringt dich bereits die Vorstellung, von der Couch aufzustehen, ins Schwitzen, empfehlen wir Level <strong>easy</strong>, als durchschnittlich fitter Mensch solltest du <strong>intermediate</strong>, für <strong>hard</strong> klatschen wir dir auf den Rücken. <br>Besonders Wahnsinnige - also Leute, die es außergewöhnlich außergewöhnlich schätzen (insbesondere Crossfit-Wahnsinnige) werden mit der Kategorie <strong>crossfit</strong> glücklich.<br>
+                        Die Kategorie <strong>Hanni</strong> ist dem Wichtelvorbild und der BEST TEAMPARTNERIN Hanni gewidmet. <br> <strong>Achtung:</strong> gerade diese Workouts sind auch nicht für Sportmuffel gedacht..</p>
+                        <form action='' method='post'>
+                            <input class='btn btn-outline-light m-2' type='submit' name='openDoors' value='zu den Türchen..' />
+                        </form>
+
+                        <?php
+                        if (isset($_POST["openDoors"])) {
+
+                            echo "<p class='text-dark'> hab Geduld, Mensch! noch ist die Zeit nicht gekommen!</p>";
+                            echo "<p class='text-dark'> du kannst dich aber bereits registrieren: <a href='register.php' class='text-light'> bring me on!</a></p>";
+                        }
+
+                        ?>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+        <!--Section: Content-->
+
+    </div>
+
+
+
 
     <!-- <div class="container row col-lg-4 col-md-6 col-xs-12 mx-auto"> -->
     <!-- <div class="container row row-cols-sm-1 row-cols-md-2 row-cols-lg-3 mx-auto"> -->

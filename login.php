@@ -53,10 +53,10 @@ if (isset($_POST['btn-login'])) {
       if ($row["status"] == 'admin') {
         $_SESSION["admin"] = $row["userId"];
         header("Location: admin.php");
-      } elseif ($row["status"] == 'superadmin'){
+      } elseif ($row["status"] == 'superadmin') {
         $_SESSION['superadmin'] = $row['userId'];
         header("Location: superadmin.php");
-      }else{
+      } else {
         $_SESSION['user'] = $row['userId'];
         header("Location: home.php");
       }
@@ -78,14 +78,14 @@ if (isset($_POST['btn-login'])) {
 </head>
 
 <body>
-<nav class="navbar sticky-top navbar-dark">
+  <nav class="navbar sticky-top navbar-dark">
 
-<div class="mx-auto">
-    <a class="btn btn-outline-success" href="index.php" role="button">Home</a>
-    <a class="btn btn-outline-success" href="login.php" role="button">Login</a>
-    <a class="btn btn-outline-success" href="register.php" role="button">Signup</a>
-</div>
-</nav>
+    <div class="mx-auto">
+      <a class="btn btn-outline-success" href="index.php" role="button">Home</a>
+      <a class="btn btn-outline-success" href="login.php" role="button">Login</a>
+      <a class="btn btn-outline-success" href="register.php" role="button">Signup</a>
+    </div>
+  </nav>
 
 
   <div class="container-fluid">
@@ -105,7 +105,7 @@ if (isset($_POST['btn-login'])) {
     </div>
     <!--END PARALLAX-->
 
-    
+
     <div class="parallax_section2 parallax_image">
 
       <div class="row">
@@ -181,7 +181,7 @@ if (isset($_POST['btn-login'])) {
     <nav class="navbar navbar-light bg-dark">
 
       <div class="mx-auto">
-      <h2 class="text-success">(c) manu 2020 </h2>
+        <h2 class="text-success">(c) manu 2020 </h2>
 
       </div>
     </nav>
@@ -193,7 +193,7 @@ if (isset($_POST['btn-login'])) {
   <!--END CONTAINER-->
 
 
- 
+
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>

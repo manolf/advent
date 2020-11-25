@@ -88,6 +88,7 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
                     <option value="2" name='difficulty' class='form-control'> intermediate</option>
                     <option value="3" name='difficulty' class='form-control'> hard</option>
                     <option value="4" name='difficulty' class='form-control'> crossfit</option>
+                    <option value="5" name='difficulty' class='form-control'> hanni</option>
                 </select>
 
                 <br>
@@ -112,18 +113,6 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
 
 
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

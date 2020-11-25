@@ -85,3 +85,22 @@ SELECT * FROM calendar
 Full JOIN wod ON calendar.wodId = wod.wodId
 
 
+
+--> ABFRAGE WOD AUS DATABASE
+
+select * from wod 
+where wod.difficulty = 2
+and wod.equipment like '%bodyweight'
+and wod.durationInMinutes <= 10
+
+--> über calendar mit userId
+--> Alle results außer jene, die user bereits gemacht hat: SUBSELECT --> Ein record
+select * from wod
+where wod.difficulty = 2
+and wod.equipment like '%bodyweight'
+and wod.durationInMinutes <= 10
+and not exists(select *
+              from calendar c
+              where c.wodId = wod.wodId
+              and c.userId = 3)
+

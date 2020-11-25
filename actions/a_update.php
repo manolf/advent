@@ -17,7 +17,7 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
 
 
 if ($_POST) {
-    //table animal
+    //table wod
     $wodId = $_POST['wodId'];
     $wodName = $_POST['wodName'];
     $trainedParts = $_POST['trainedParts'];

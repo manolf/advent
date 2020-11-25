@@ -7,15 +7,27 @@ admin panel
 crud design eingabe wod
 navbar router
 Kalender erstellen
+fa-icon
+Wodsuche: suche passt
+daytrigger
 
 
 ----high prio----
+
+heute: nur kästchen größer Datum klickbar OK
+(nur Kästchen ohne wod klickbar)
+nicht klickbare: hover
+bei Klick: Fenster öffnet sich und bleibt (muss mit Kreuz geschlossen werden)
+wods wählbar -> SQL Abfrage liefert ein Wod mit diesen Parametern
+
 
 Begrüßungskarussel
 Verlinkung Kalender
 Animation Opening
 SinglePage Türchen
-Wodsuche
+
+
+
 
 
 

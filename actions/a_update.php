@@ -25,10 +25,10 @@ if ($_POST) {
     $description = $_POST['description'];
     $durationInMinutes = $_POST['durationInMinutes'];
     $difficulty = $_POST['difficulty'];
-    $points = $_POST['points'];
+    // $points = $_POST['points'];
     $link = $_POST['link'];
 
-    $sql = "UPDATE wod SET wodName = '$wodName', trainedParts = '$trainedParts', equipment = '$equipment', description = '$description', durationInMinutes = '$durationInMinutes', difficulty = '$difficulty', points = '$points', link = '$link' WHERE wodId = $wodId";
+    $sql = "UPDATE wod SET wodName = '$wodName', trainedParts = '$trainedParts', equipment = '$equipment', description = '$description', durationInMinutes = '$durationInMinutes', difficulty = '$difficulty', link = '$link' WHERE wodId = $wodId";
 
     // $sql2 = "UPDATE address SET street = '$street', zipcode = '$zipcode', city = '$city' WHERE addressID= $addressID";
 

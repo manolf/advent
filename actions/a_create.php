@@ -30,7 +30,7 @@ if ($_POST) {
    $points = $_POST['points'];
    $userId = $_SESSION['admin'];
 
-   $sql = "INSERT into wod (wodName, trainedParts, equipment, description, durationInMinutes, difficulty, link, points, userId)  values ('$wodName', '$trainedParts','$equipment', '$description','$durationInMinutes','$difficulty', '$link', '$points','$userId')";
+   $sql = "INSERT into wod (wodName, trainedParts, equipment, description, durationInMinutes, difficulty, link, userId)  values ('$wodName', '$trainedParts','$equipment', '$description','$durationInMinutes','$difficulty', '$link','$userId')";
 
 ?>
 

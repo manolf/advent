@@ -37,40 +37,36 @@ echo "heute: " . $today;
 
 if ($_POST['dayId']) {
    $dayId = $_POST['dayId'];
-   echo "<br> diff: ";
-   echo $difficulty = $_POST['difficulty'];
-   echo "<br> min: ";
-   echo $durationInMinutes = $_POST['durationInMinutes'];
-   echo "<br> equipment: ";
-   echo $equipment = $_POST['equipment2'];
-   echo "<br>";
-   echo " dayId = " . $dayId;
 
-   // $sql = "SELECT * FROM wod
-   //  where wod.difficulty = $difficulty
-   //  and wod.equipment like '%equipment'
-   //  and wod.durationInMinutes <= $durationInMinutes
-   //  ";
+   echo "dayId = " . $dayId;
 
-   // $result = $conn->query($sql);
-   // $data = $result->fetch_assoc();
-   // $conn->close();
+   $difficulty = $_POST['difficulty'];
+   $durationInMinutes = $_POST['durationInMinutes'];
+   $equipment = $_POST['equipment2'];
+   $userId = $_SESSION['user'];
 
 
+   echo $sql = "SELECT * FROM wod 
+   inner join users on users.userId= wod.userId
+   WHERE difficulty = $difficulty 
+   and equipment like '%$equipment' 
+   and durationInMinutes < $durationInMinutes 
+   and not exists (select *
+                  from calendar c
+               where c.wodId = wod.wodId
+                     and c.userId = $userId)
+                   ORDER BY wod.wodId ASC LIMIT 1
+   ";
 
-   // $userRow = mysqli_fetch_array($res2, MYSQLI_ASSOC);
+   echo $sql2 = "select * 
+   from day
+   where day.dayId = '$dayId'";
 
-
-   //  if ($conn->query($sql) === TRUE) {
-   //      echo "<div class='text-dark pt-2 pb-2'>";
-   //      echo "<p><center><b>Workout kommt...</b></center></p>";
-   //      echo "<p><center><b><New Record Successfully Created</b></center></p>";
-   //      header("refresh:2; url=wod.php");
-
-   //      echo "</div>";
-   //  } else {
-   //      echo "Error " . $sql . ' ' . $conn->connect_error;
-   //  }
+   $result = $conn->query($sql);
+   $result2 = $conn->query($sql2);
+   $data = $result->fetch_assoc();
+   $data2 = $result2->fetch_assoc();
+   $conn->close();
 }
 
 ?>
@@ -95,6 +91,67 @@ if ($_POST['dayId']) {
 <body style="background: green">
 
    <h1>Hier kommt dein Workout!</h1>
+
+
+   <div class=" container container-day my-5 z-depth-1 rounded bg-white">
+      <!--Section: Content-->
+      <section class="dark-grey-text">
+         <div class="row pr-lg-5">
+            <div class="col-md-7 mb-4">
+               <div class="view">
+                  <img src='<?php echo $data2['icon'] ?>' alt="day" class="img-fluid mt-4 rounded">
+               </div>
+            </div>
+            <div class="col-md-5 d-flex align-items-center mb-4">
+               <div>
+                  <h3 class="font-weight-bold mb-4"> Tag <?php echo $data2['dayId'] ?></h3>
+                  <h4><?php echo $data['wodName'] ?></h4>
+               </div>
+            </div>
+         </div>
+      </section>
+      <section>
+         <h5 class='bg-danger border'>
+            <?php echo $data['description'] ?>
+            <hr>
+
+            <?php
+            if ($data['link'] != '') {
+               echo ('Zusätzliche Infos bzw das Wod findest du <a target="_blank" href=' . $data['link'] . ' >hier. </a>');
+            } else {
+               echo " ";
+            }
+            ?>
+         </h5>
+
+         <form action='insertWod.php' method='post'>
+            <!-- <h5>Hurra, ich habe es geschafft!
+            </h5> -->
+            <input class='btn btn-outline-danger m-2' type='submit' name='insertWod' value='Workout absolviert' />
+
+            <input type="hidden" name="wodId" value="<?php echo $data['wodId'] ?>" />
+            <input type="hidden" name="dayId" value="<?php echo $data2['dayId'] ?>" />
+            <p><?php echo $data2['dayId'] ?></p>
+         </form>
+
+         <!-- <h6>Mit diesem Workout hast du folgenden Teilen deines Körpers etwas Gutes getan: <?php echo $data['trainedParts'] ?> <br> Super, nur weiter so!</h6> -->
+         <hr>
+         <p>
+
+            Dieses Workout wurde für dich von <a href="<?php echo $data['insta'] ?>" target="_blank"><?php echo $data['userName'] ?></a> bereitgestellt. :-)
+
+         </p>
+      </section>
+      <!--Section: Content-->
+   </div>
+
+
+
+
+
+
+
+
 
 </body>
 

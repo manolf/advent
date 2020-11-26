@@ -199,11 +199,11 @@ if (isset($_POST['btn-signup'])) {
 
       <nav class="navbar navbar-light bg-dark">
 
-<div class="mx-auto">
-<h2 class="text-success">(c) manolf 2020 @ codefactory </h2>
+         <div class="mx-auto">
+            <h2 class="text-success">(c)manu & orsi 2020 </h2>
 
-</div>
-</nav>
+         </div>
+      </nav>
 
    </div>
 

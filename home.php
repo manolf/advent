@@ -114,11 +114,11 @@ $today = 6;
 
       //Full Join + Inner Join 
       $sql = "SELECT * FROM
-      (SELECT calendar.dayId, wod.wodName, wod.points, wod.difficulty FROM calendar
+      (SELECT calendar.dayId, wod.wodName, wod.difficulty FROM calendar
       LEFT JOIN wod ON calendar.wodId = wod.wodId
       where calendar.userId = " . $_SESSION['user'] . " 
       UNION
-      SELECT calendar.dayId, wod.wodName, wod.points, wod.difficulty FROM calendar
+      SELECT calendar.dayId, wod.wodName, wod.difficulty FROM calendar
       RIGHT JOIN wod ON calendar.wodId = wod.wodId
       where calendar.userId = " . $_SESSION['user'] . " ) a 
       INNER JOIN day d ON d.dayId = a.dayId";
@@ -132,21 +132,23 @@ $today = 6;
          while ($row = mysqli_fetch_assoc($result)) {
             $day = $row['dayId'];
             $wodName = $row['wodName'];
-            $points = $row['points'];
             $level = $row['difficulty'];
             $icon = $row['icon'];
             $displayId = $day . "alpha";
             //echo "hello" . $icon;
 
+            // $clicked = if ($level != ''){
+
+            // }
+
       ?>
 
             <form action="day.php" method='post'>
-               <div class="window secondary bild_beschriftung" id="<?php echo $day ?>">
-                  <img src="<?php echo $icon ?>" style="width: 150px; height: 150px;" alt="icon">
+               <div class="window bild_beschriftung" id="<?php echo $day ?>">
+                  <img class="caro" src="<?php echo $icon ?>" style="width: 150px; height: 150px;" alt="icon">
                   <span class='text-success erst'> <a href='day.php?dayId=<?php echo $day ?>' class='btn btn-outline-danger btn-sm'>now? </a> </span>
                   <span class='text-light wod'"><?php echo $wodName ?></p>
-                  <span class='text-light level'><?php echo $level ?></span>
-                  <span class='text-light points'><?php echo $points ?></span>
+                  <!-- <span class='text-light level'><?php echo $level ?></span> -->
                   <input type='hidden' name='dayId' value=<?php echo $day ?> />
                   <!-- <input class='btn btn-outline-success m-2' type='submit' value='Go!' />
                   <a href='home.php' class='btn btn-outline-warning'> Zurück</a>
@@ -156,27 +158,6 @@ $today = 6;
 
             </form>
 
-            <!-- 
-
-            echo " <form action='day.php' method='POST'>";
-                     echo "<div class='window secondary' id='$day'>";
-                        // echo "<div class='window secondary' id='$day'><span class='text-success d-flex justify-content-end align-items-baseline mt-1 mr-1'><i id='close' class='fa fa-remove style=' color:darkred;'></i></span>";
-                           echo "<span class='text-success number'>$day </span>";
-                           echo "<p class='text-secondary'>$wodName</p>";
-                           echo "<p class='text-secondary'>$points</p> ";
-                           echo "<div id='$displayId' style='display:none'>";
-
-                              echo "<input type='hidden' name='dayId' value=$day />";
-                              echo "<input class='btn btn-outline-success m-2' type='submit' name='getWorkout' value='Get your Workout!' />";
-                              echo "<a href='home.php' class='btn btn-outline-warning'> Zurück</a>";
-
-                              // echo "<button type='submit' class='btn btn-outline-success d-flex justify-content-stretch '>";
-                                 // echo "<center>Get your Wod!</center>";
-                                 // echo "</button>";
-                              echo "</div>";
-                           echo "</div>";
-                        echo "
-            </form>"; -->
 
       <?php
          }
@@ -197,7 +178,7 @@ $today = 6;
          if (isset($_POST["createCalendar"])) {
 
 
-            echo 'jaja, ein Elfe arbeitet bereits daran..';
+            echo 'wir Elfen arbeiten bereits daran..';
 
             $userId = $_SESSION['user'];
             $sql2 = "INSERT INTO `calendar` (`calendarId`, `userId`, `wodId`, `dayId`) VALUES (NULL, '$userId', NULL, '1'),
@@ -249,99 +230,102 @@ $today = 6;
    </div>
 
 
-   <div class="container my-5 z-depth-1 rounded">
-      <!--Section: Content-->
-      <section class="dark-grey-text">
+   <div class=" container my-5 z-depth-1 rounded">
+                     <!--Section: Content-->
+                     <section class="dark-grey-text">
 
-         <div class="row pr-lg-5">
-            <div class="col-md-7 mb-4">
+                        <div class="row pr-lg-5">
+                           <div class="col-md-7 mb-4">
 
-               <div class="view">
-                  <img src='./img/boxjump.png' alt="boxjump" style="width: 472px; height: 482px" class="img-fluid mt-4 rounded">
+                              <div class="view">
+                                 <img src='./img/boxjump.png' alt="boxjump" style="width: 472px; height: 482px" class="img-fluid mt-4 rounded">
+                              </div>
+
+                           </div>
+                           <div class="col-md-5 d-flex align-items-center mb-4">
+                              <div>
+
+
+
+                                 <h3 class="font-weight-bold mb-4"> Auf in die Startlöcher...</i> </h3>
+
+                                 <br>
+
+                                 <p>... nochmals: Die Elfen lassen dir die Wahl! Du hast die Möglichkeit zwischen verschiedenen Levels zu wählen. <br></p>Bringt dich bereits die Vorstellung, von der Couch aufzustehen, ins Schwitzen, empfehlen wir Level <strong>easy</strong>, als durchschnittlich fitter Mensch solltest du <strong>intermediate</strong> anstreben, für <strong>hard</strong> klatschen wir dir auf den Rücken. <br>Besonders Wahnsinnige - also Leute, die es außergewöhnlich außergewöhnlich schätzen (insbesondere Crossfit-Wahnsinnige) werden mit der Kategorie <strong>crossfit</strong> glücklich.<br>
+                                 Die Kategorie <strong>Hanni</strong> ist dem Wichtelvorbild und der BEST TEAMPARTNERIN Hanni gewidmet. <br> <strong>Achtung:</strong> gerade diese Workouts sind auch nicht für Sportmuffel gedacht..</p>
+
+                                 <!-- <button type="button" class="btn btn-light btn-rounded mx-0 mb-2">zu den Türchen...</button> -->
+
+                              </div>
+                           </div>
+                        </div>
+
+                     </section>
+                     <!--Section: Content-->
                </div>
 
-            </div>
-            <div class="col-md-5 d-flex align-items-center mb-4">
-               <div>
-
-
-
-                  <h3 class="font-weight-bold mb-4"> Auf in die Startlöcher...</i> </h3>
-
-                  <br>
-
-                  <p>... nochmals: Die Elfen lassen dir die Wahl! Du hast die Möglichkeit zwischen verschiedenen Levels zu wählen. <br></p>Bringt dich bereits die Vorstellung, von der Couch aufzustehen, ins Schwitzen, empfehlen wir Level <strong>easy</strong>, als durchschnittlich fitter Mensch solltest du <strong>intermediate</strong> anstreben, für <strong>hard</strong> klatschen wir dir auf den Rücken. <br>Besonders Wahnsinnige - also Leute, die es außergewöhnlich außergewöhnlich schätzen (insbesondere Crossfit-Wahnsinnige) werden mit der Kategorie <strong>crossfit</strong> glücklich.<br>
-                  Die Kategorie <strong>Hanni</strong> ist dem Wichtelvorbild und der BEST TEAMPARTNERIN Hanni gewidmet. <br> <strong>Achtung:</strong> gerade diese Workouts sind auch nicht für Sportmuffel gedacht..</p>
-
-                  <!-- <button type="button" class="btn btn-light btn-rounded mx-0 mb-2">zu den Türchen...</button> -->
-
-               </div>
-            </div>
-         </div>
-
-      </section>
-      <!--Section: Content-->
-   </div>
 
 
 
 
 
+               <script>
+                  var today = (new Date()).getDate();
+                  console.log(today);
+                  var today = 6;
 
-   <script>
-      var today = (new Date()).getDate();
-      console.log(today);
-      var today = 6;
+                  //datumsabhängige Steuerung für die Kästchen
 
-      //datumsabhängige Steuerung für die Kästchen
+                  $(document).ready(function() {
+                     console.log(today);
+                     for (let i = 1; i <= 24; i++) {
+                        let mydiv = document.getElementById(i);
+                        //kästchen not Ready: nur hover und nicht clickable
+                        if (i > today) {
+                           mydiv.classList.add("notReady");
+                           console.log(mydiv.classList);
+                           // mydiv.classList.addStyle(backgroundColor = 'white');
+                           mydiv.style.cssText = "background : white";
+                           // mydiv.classList.remove("clickable");
+                        }
+                        if (i <= today) {
+                           mydiv.classList.add("clickable");
+                           mydiv.style.cssText = "background: rgb (192, 192, 192)";
+                           console.log(mydiv.classList);
+                        }
+                     }
+                  })
 
-      $(document).ready(function() {
-         console.log(today);
-         for (let i = 1; i <= 24; i++) {
-            let mydiv = document.getElementById(i);
-            //kästchen not Ready: nur hover und nicht clickable
-            if (i > today) {
-               mydiv.classList.add("notReady");
-               //console.log(mydiv.classList);
-               // mydiv.classList.remove("clickable");
-            }
-            if (i <= today) {
-               mydiv.classList.add("clickable");
-               //console.log(mydiv.classList);
-            }
-         }
-      })
+                  //Funktion für die clickable Kästchen
 
-      //Funktion für die clickable Kästchen
+                  //deactivated start
+                  $('.window').on('click', function() {
+                     console.log("hello");
+                     //  $(this).toggleClass('clicked');
+                     console.log($(this));
+                     $(this).addClass('clicked');
+                     //deactivated end
 
-      //deactivated start
-      // $('.window').on('click', function() {
-      //    console.log("hello");
-      //    //  $(this).toggleClass('clicked');
-      //    console.log($(this));
-      //    $(this).addClass('clicked');
-      //deactivated end
+                     // console.log("hello" + $(this).find(".test"));
+                     // console.log($(this).next());
+                     // console.log($(this).children()[0]);
+                     // console.log($(this).children()[1].id);
+                     // console.log($(this).children()[2].id);
+                     // console.log($(this).children()[3].id);
+                     // console.log($(this).children()[4].id);
 
-      // console.log("hello" + $(this).find(".test"));
-      // console.log($(this).next());
-      // console.log($(this).children()[0]);
-      // console.log($(this).children()[1].id);
-      // console.log($(this).children()[2].id);
-      // console.log($(this).children()[3].id);
-      // console.log($(this).children()[4].id);
+                     show($(this).children()[3].id);
 
-      show($(this).children()[3].id);
+                  });
 
-      });
-
-      function show(id) {
-         if (document.getElementById) {
-            var mydiv = document.getElementById(id);
-            // mydiv.style.display = (mydiv.style.display == 'none' ? 'block' : 'none');
-            mydiv.style.display = 'block';
-         }
-      }
-   </script>
+                  function show(id) {
+                     if (document.getElementById) {
+                        var mydiv = document.getElementById(id);
+                        // mydiv.style.display = (mydiv.style.display == 'none' ? 'block' : 'none');
+                        mydiv.style.display = 'block';
+                     }
+                  }
+               </script>
 </body>
 
 </html>

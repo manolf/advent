@@ -81,7 +81,7 @@ include('navbar.php');
 
     </div>
 
-
+    <div></div>
 
 
     <!-- <div class="container row col-lg-4 col-md-6 col-xs-12 mx-auto"> -->
@@ -92,10 +92,10 @@ include('navbar.php');
 
         <div class="window" id="1" style="background: white"><img src="./img/icon/1.png" style="width: 150px; height: 150px" alt="">
         </div>
-        <div class="window" id="2"> <img src="./img/icon/2.png" style="width: 150px; height: 150px" alt=""> </div>
-        <div class="window" id="3"> <img src="./img/icon/3.png" style="width: 150px; height: 150px" alt=""> </div>
-        <div class="window" id="4"> <img src="./img/icon/4.png" style="width: 150px; height: 150px" alt=""> </div>
-        <div class="window" id="5"> <img src="./img/icon/5.png" style="width: 150px; height: 150px" alt=""> </div>
+        <div class="window" id="2"> <img src="./img/icon/2.png" style="width: 150px; height: 150px; background: rgb(240, 236, 187);" alt=""> </div>
+        <div class="window" id="3"> <img src="./img/icon/3.png" style="width: 150px; height: 150px; background: rgb(192, 192, 192);" alt=""> </div>
+        <div class="window" id="4"> <img src="./img/icon/4.png" style="width: 150px; height: 150px; background: red;"> </div>
+        <div class="window" id="5"> <img src="./img/icon/5.png" style="width: 150px; height: 150px; background: #cdfcd2 " alt=""> </div>
         <div class="window" id="6"> <img src="./img/icon/6.png" style="width: 150px; height: 150px" alt=""> </div>
         <div class="window" id="7"> <img src="./img/icon/7.png" style="width: 150px; height: 150px" alt=""> </div>
         <div class="window" id="8"> <img src="./img/icon/8.png" style="width: 150px; height: 150px" alt=""> </div>

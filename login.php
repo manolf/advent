@@ -181,7 +181,7 @@ if (isset($_POST['btn-login'])) {
     <nav class="navbar navbar-light bg-dark">
 
       <div class="mx-auto">
-        <h2 class="text-success">(c) manu 2020 </h2>
+        <h2 class="text-success">(c) manu & orsi 2020 </h2>
 
       </div>
     </nav>

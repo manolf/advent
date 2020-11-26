@@ -8,7 +8,7 @@ crud design eingabe wod
 navbar router
 Kalender erstellen
 fa-icon
-Wodsuche: suche passt
+Wodsuche
 daytrigger
 
 
@@ -19,13 +19,27 @@ heute: nur kästchen größer Datum klickbar OK
 nicht klickbare: hover
 bei Klick: Fenster öffnet sich und bleibt (muss mit Kreuz geschlossen werden)
 wods wählbar -> SQL Abfrage liefert ein Wod mit diesen Parametern
+check: only present days are possible to open
+equipment aus der DB übernehmen --> animals?
+pagination workouts und rangliste
+
+--orsi
+Warnhinweise Nichthaftung
+Kontaktseite - Team (graphics by.. )
+Footer
+Umbau day - wod (autofocus mobile version)
+fehlertext --> wod
+türchen: button -> div
+hintergrund
+Schrift Orsi
+db entries
 
 
 Begrüßungskarussel
 Verlinkung Kalender
 Animation Opening
 SinglePage Türchen
-Schrift Orsi
+
 
 
 

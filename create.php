@@ -31,13 +31,14 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
     <link rel="stylesheet" type="text/css" href="style1.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <!-- <script src="https://cdn.tiny.cloud/1/zmvdg0nz5rrmxbcvtzfsgb1nmc7iuq8uotrbbxfxt5iu5yol/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="https://cdn.tiny.cloud/1/a7wzioiy0zx6hb148we9yxp70pjovixkx71drwi6etdiim1b/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script> -->
     <script>
-        tinymce.init({
-            selector: '#mytextarea',
-            placeholder: "Beschreibung des Workouts"
+        // tinymce.init({
+        //     selector: '#mytextarea',
+        //     placeholder: "Beschreibung des Workouts"
 
-        });
-    </script> -->
+        // });
+    </script>
 
 </head>
 
@@ -93,8 +94,8 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
 
                 <br>
 
-                <label for="points">Punkte: </label>
-                <input type="text" class="form-control mb-3" name="points" placeholder="Punkte... zwischen 0 und 30" />
+                <!-- <label for="points">Punkte: </label>
+                <input type="text" class="form-control mb-3" name="points" placeholder="Punkte... zwischen 0 und 30" /> -->
 
                 <label for="link">Link: </label>
                 <input type="text" class="form-control mb-3" name="link" placeholder="eventuell: Link Youtube etc." />

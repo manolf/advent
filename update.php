@@ -101,8 +101,8 @@ if ($_GET['wodId']) {
                     <!-- <label for="difficulty">Level: </label>
                     <input type="text" class="form-control mb-3" name="difficulty" value="<?php echo $data['difficulty'] ?>" /> -->
 
-                    <label for="points">Punkte: </label>
-                    <input type="text" class="form-control mb-3" name="points" value="<?php echo $data['points'] ?>" />
+                    <!-- <label for="points">Punkte: </label>
+                    <input type="text" class="form-control mb-3" name="points" value="<?php echo $data['points'] ?>" /> -->
 
                     <label for="link">Link: </label>
                     <input type="text" class="form-control mb-3" name="link" value="<?php echo $data['link'] ?>" />

@@ -120,3 +120,59 @@ card old
         //GET WOD END
 
         ?>
+
+
+
+        <div class=" container container-day my-5 z-depth-1 rounded bg-white">
+            <!--Section: Content-->
+            <section class="dark-grey-text">
+               <div class="row pr-lg-5">
+                  <div class="col-md-7 mb-4">
+                     <div class="view">
+                        <img src='<?php echo $data2['icon'] ?>' alt="day" class="img-fluid mt-4 rounded">
+                     </div>
+                  </div>
+                  <div class="col-md-5 d-flex align-items-center mb-4">
+                     <div>
+                        <h3 class="font-weight-bold mb-4"> Tag <?php echo $data2['dayId'] ?></h3>
+                        <h4><?php echo $data['wodName'] ?></h4>
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <section>
+               <h5 class='bg-danger border'>
+                  <?php echo $data['description'] ?>
+                  <hr>
+      
+                  <?php
+                  if ($data['link'] != '') {
+                     echo ('Zusätzliche Infos bzw das Wod findest du <a target="_blank" href=' . $data['link'] . ' >hier. </a>');
+                  } else {
+                     echo " ";
+                  }
+                  ?>
+               </h5>
+
+               
+      
+               <form action='insertWod.php' method='post'>
+                  <!-- <h5>Hurra, ich habe es geschafft!
+                  </h5> -->
+                  <input class='btn btn-outline-danger m-2' type='submit' name='insertWod' value='Workout absolviert' />
+      
+                  <input type="hidden" name="wodId" value="<?php echo $data['wodId'] ?>" />
+                  <input type="hidden" name="dayId" value="<?php echo $data2['dayId'] ?>" />
+                  <p><?php echo $data2['dayId'] ?></p>
+               </form>
+      
+               <!-- <h6>Mit diesem Workout hast du folgenden Teilen deines Körpers etwas Gutes getan: <?php echo $data['trainedParts'] ?> <br> Super, nur weiter so!</h6> -->
+               <hr>
+               <p>
+      
+                  Dieses Workout wurde für dich von <a href="<?php echo $data['insta'] ?>" target="_blank"><?php echo $data['userName'] ?></a> bereitgestellt. :-)
+      
+               </p>
+            </section>
+            <!--Section: Content-->
+         </div>

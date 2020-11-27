@@ -38,7 +38,7 @@ echo "heute: " . $today;
 if ($_POST['dayId']) {
    $dayId = $_POST['dayId'];
 
-   echo "dayId = " . $dayId;
+   "dayId = " . $dayId;
 
    $difficulty = $_POST['difficulty'];
    $durationInMinutes = $_POST['durationInMinutes'];
@@ -46,7 +46,7 @@ if ($_POST['dayId']) {
    $userId = $_SESSION['user'];
 
 
-   echo $sql = "SELECT * FROM wod 
+   $sql = "SELECT * FROM wod 
    inner join users on users.userId= wod.userId
    WHERE difficulty = $difficulty 
    and equipment like '%$equipment' 
@@ -58,7 +58,9 @@ if ($_POST['dayId']) {
                    ORDER BY wod.wodId ASC LIMIT 1
    ";
 
-   echo $sql2 = "select * 
+
+
+   $sql2 = "select * 
    from day
    where day.dayId = '$dayId'";
 
@@ -66,6 +68,15 @@ if ($_POST['dayId']) {
    $result2 = $conn->query($sql2);
    $data = $result->fetch_assoc();
    $data2 = $result2->fetch_assoc();
+
+   $count = mysqli_num_rows($result);
+   if ($count == 0) {
+      // echo "oh nein...";
+      // echo "es sieht so aus, als gäbe es kein Wod in der gewünschten Kategorie für dich!";
+      header("Location: nowod.php?dayId=" . $dayId);
+   }
+
+
    $conn->close();
 }
 
@@ -76,73 +87,98 @@ if ($_POST['dayId']) {
 
 <head>
    <title>Welcome - <?php echo $userRow['userEmail']; ?></title>
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-   <link rel="stylesheet" href="style.css">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-   <!--load all styles -->
-   <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
-   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-   <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-   <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
 </head>
 
-<body style="background: green">
+<body style="background: white">
 
-   <h1>Hier kommt dein Workout!</h1>
+   <div class="wrapper">
 
-
-   <div class=" container container-day my-5 z-depth-1 rounded bg-white">
-      <!--Section: Content-->
-      <section class="dark-grey-text">
-         <div class="row pr-lg-5">
-            <div class="col-md-7 mb-4">
-               <div class="view">
-                  <img src='<?php echo $data2['icon'] ?>' alt="day" class="img-fluid mt-4 rounded">
+      <div class="left container container-day my-5 z-depth-1 rounded bg-white">
+         <!--Section: Content-->
+         <section class="dark-grey-text">
+            <div class="row pr-lg-5">
+               <div class="col-md-7 mb-4">
+                  <div class="view">
+                     <img src='<?php echo $data2['elfPic'] ?>' alt="elfPic" class="img-fluid mt-4 rounded">
+                  </div>
+               </div>
+               <div class="col-md-5 d-flex align-items-center mb-4">
+                  <div>
+                     <h3 class="font-weight-bold mb-4"> Tag <?php echo $data2['dayId'] ?></h3>
+                     <h6><?php echo $data2['text'] ?></h6>
+                  </div>
                </div>
             </div>
-            <div class="col-md-5 d-flex align-items-center mb-4">
-               <div>
-                  <h3 class="font-weight-bold mb-4"> Tag <?php echo $data2['dayId'] ?></h3>
-                  <h4><?php echo $data['wodName'] ?></h4>
-               </div>
-            </div>
-         </div>
-      </section>
-      <section>
-         <h5 class='bg-danger border'>
-            <?php echo $data['description'] ?>
-            <hr>
+         </section>
+         <!--Section: Content-->
+      </div>
 
-            <?php
-            if ($data['link'] != '') {
-               echo ('Zusätzliche Infos bzw das Wod findest du <a target="_blank" href=' . $data['link'] . ' >hier. </a>');
-            } else {
-               echo " ";
-            }
-            ?>
-         </h5>
 
-         <form action='insertWod.php' method='post'>
-            <!-- <h5>Hurra, ich habe es geschafft!
-            </h5> -->
-            <input class='btn btn-outline-danger m-2' type='submit' name='insertWod' value='Workout absolviert' />
+      <div class=" right container my-5 py-5 z-depth-1">
+         <!--Section: Content-->
+         <!-- <section class="px-md-5 mx-md-5 dark-grey-text text-center text-lg-right"> -->
+         <section>
+            <!--Grid row-->
+            <!-- <div class="row"> -->
 
-            <input type="hidden" name="wodId" value="<?php echo $data['wodId'] ?>" />
-            <input type="hidden" name="dayId" value="<?php echo $data2['dayId'] ?>" />
-            <p><?php echo $data2['dayId'] ?></p>
-         </form>
+            <!-- <div class="col-lg-7 mb-4 mb-lg-0"> -->
+            <!-- <img src="./img/icon/pig.jpg" class="img-fluid mb-5" alt=""> -->
 
-         <!-- <h6>Mit diesem Workout hast du folgenden Teilen deines Körpers etwas Gutes getan: <?php echo $data['trainedParts'] ?> <br> Super, nur weiter so!</h6> -->
-         <hr>
-         <p>
+            <div>
+               <h3 class="font-weight-bold pb-3 " id="workout"> Hier ist dein Wod! </h3>
 
-            Dieses Workout wurde für dich von <a href="<?php echo $data['insta'] ?>" target="_blank"><?php echo $data['userName'] ?></a> bereitgestellt. :-)
+               <div class="form-group">
 
-         </p>
-      </section>
-      <!--Section: Content-->
+                  <h3 class="text-success"><?php echo $data['wodName'] ?></h3>
+
+                  <h5 class=''>
+                     <?php echo $data['description'] ?>
+                     <hr>
+
+                     <?php
+                     if ($data['link'] != '') {
+                        echo ('Zusätzliche Infos bzw das Wod findest du <a target="_blank" href=' . $data['link'] . ' >hier. </a>');
+                     } else {
+                        echo " ";
+                     }
+                     ?>
+                  </h5>
+
+                  <h5>Mit diesem Workout tust du folgenden Teilen deines Körpers etwas Gutes:<br><br> <strong> <?php echo $data['trainedParts'] ?> </strong> <br><br>Super, nur weiter so!</h5>
+
+                  <form action='insertWod.php' method='post'>
+                     <!-- <h5>Hurra, ich habe es geschafft!
+                  </h5> -->
+                     <input class='btn btn-outline-danger m-2' type='submit' name='insertWod' value='Workout absolviert' />
+
+                     <input type="hidden" name="wodId" value="<?php echo $data['wodId'] ?>" />
+                     <input type="hidden" name="dayId" value="<?php echo $data2['dayId'] ?>" />
+                     <!-- <p><?php echo $data2['dayId'] ?></p> -->
+                  </form>
+                  <hr>
+                  <p>
+
+                     Dieses Workout wurde für dich von <a href="<?php echo $data['insta'] ?>" target="_blank"><?php echo $data['userName'] ?></a> bereitgestellt. :-) Du kannst dich gerne bei ihr/ihm dafür bedanken (oder beschweren)..
+
+                  </p>
+
+
+                  </form>
+                  <!-- </div> -->
+                  <!--Grid column-->
+                  <!--Grid column-->
+                  <!-- <div class="col-lg-5 mb-4 mb-lg-0 d-flex align-items-center justify-content-center">
+                <img src=<?php echo $data['icon'] ?> style="width: 300px; height: 300px" alt="">
+            </div> -->
+                  <!--Grid column-->
+                  <!-- </div> -->
+                  <!--Grid row-->
+         </section>
+         <!--Section: Content-->
+
+
+      </div>
+
    </div>
 
 
@@ -152,6 +188,13 @@ if ($_POST['dayId']) {
 
 
 
+
+
+   <script>
+      var x = document.getElementById('workout');
+      x.setAttribute("tabindex", 1);
+      x.focus()
+   </script>
 
 </body>
 

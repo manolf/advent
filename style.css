@@ -1,3 +1,15 @@
+/*
+=============== 
+Global Styles
+===============
+*/
+
+body {
+  font-family: "Fahkwang", sans-serif, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+}
+
 .card:hover {
   transform: scale(1.05);
 }
@@ -30,7 +42,7 @@
 } */
 
 .container {
-  background-color: darkgreen;
+  background-color: white;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -61,6 +73,10 @@
 /******************************
 WINDOW-STYLING
 ******************************/
+
+.container-cal {
+  background-color: darkgreen !important;
+}
 
 .window {
   width: 150px;
@@ -93,10 +109,16 @@ WINDOW-STYLING
 
 .left {
   width: 66%;
+  display: flex;
+  align-items: center;
 }
 
 .right {
   width: 33%;
+  display: flex;
+  align-items: center;
+  border: 1.4pt solid green;
+  border-radius: 5px;
 }
 
 .window.notReady:hover {
@@ -178,6 +200,7 @@ DAY
 .container-day {
   /* background: white; */
   width: 60%;
+  border: 1 pt solid green;
 }
 
 .imageElf {
@@ -186,6 +209,27 @@ DAY
   width: 50%;
   display: flex;
   justify-content: center;
+}
+
+/*
+=============== 
+ERROR
+===============
+*/
+
+.container-error {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  /* background-color: blue; */
+  /* border: 1pt solid green; */
+}
+
+.error-text {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 @media (max-width: 500px) {
@@ -209,9 +253,33 @@ DAY
   .jumbotron {
     display: none;
   }
+
+  .container {
+    border: none;
+  }
+
+  .container-day {
+    /* background: white; */
+    width: 100%;
+    border: none;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .left {
+    width: 100%;
+  }
+
+  .right {
+    width: 100%;
+    border: none;
+  }
 }
 
-@media (min-width: 501px) and (max-width: 720px) {
+@media (min-width: 501px) and (max-width: 800px) {
   .card {
     max-width: 320px;
   }
@@ -221,5 +289,29 @@ DAY
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
+  }
+
+  .container {
+    border: none;
+  }
+
+  .container-day {
+    /* background: white; */
+    width: 100%;
+    border: none;
+  }
+
+  .left {
+    width: 100%;
+  }
+
+  .right {
+    width: 100%;
+    border: none;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap;
   }
 }

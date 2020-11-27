@@ -10,6 +10,9 @@ Kalender erstellen
 fa-icon
 Wodsuche
 daytrigger
+Umbau day - wod (autofocus mobile version)
+Schrift Orsi
+fehlertext --> wod
 
 
 ----high prio----
@@ -21,18 +24,19 @@ bei Klick: Fenster öffnet sich und bleibt (muss mit Kreuz geschlossen werden)
 wods wählbar -> SQL Abfrage liefert ein Wod mit diesen Parametern
 check: only present days are possible to open
 equipment aus der DB übernehmen --> animals?
-pagination workouts und rangliste
+pagination workouts und rangliste 
 
 --orsi
 Warnhinweise Nichthaftung
 Kontaktseite - Team (graphics by.. )
 Footer
-Umbau day - wod (autofocus mobile version)
-fehlertext --> wod
+
+
 türchen: button -> div
 hintergrund
-Schrift Orsi
-db entries
+
+db entries: harmonize - abfrage minutes
+dynamisches Übernehmen der Kategorien für wod-suche
 
 
 Begrüßungskarussel
@@ -42,13 +46,10 @@ SinglePage Türchen
 
 
 
-
-
-
-
 ----low prio----
 imageicon elf in adressleiste
 Rangliste 
+choose your character
 
 
 eigene domäne und website

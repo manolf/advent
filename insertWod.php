@@ -25,23 +25,24 @@ include('navbarUser.php');
 if ($_POST) {
     //table wod
 
-    echo    $userId = $_SESSION['user'];
-    echo    $wodId = $_POST['wodId'];
-    echo   $body = $_POST['trainedParts'];
-    echo   $dayId = $_POST['dayId'];
+    $userId = $_SESSION['user'];
+    $wodId = $_POST['wodId'];
+    $body = $_POST['trainedParts'];
+    $dayId = $_POST['dayId'];
 
 
     // UPDATE calendar SET wodId = '2' WHERE userId = '3' AND dayId = '5'
 
-    echo $sql = "UPDATE calendar SET wodId = '$wodId' WHERE userId = '$userId' AND dayId = '$dayId'";
+    $sql = "UPDATE calendar SET wodId = '$wodId' WHERE userId = '$userId' AND dayId = '$dayId'";
 
 
     if (mysqli_query($conn, $sql)) {
         echo "<div class='text-dark pt-2 pb-2'>";
         echo "<p><center><b>Super, du hast es geschafft! </b></center></p>";
-        echo "<p><center><b><Dein Körper wird es dir danken: mit diesem Wod hast du folgende Teile in Schwung gebracht: </b></center></p>";
+        echo "<center> <img src='./img/jumping-jacks.png' alt='vor Freude hüpfender Hanno' style='width:365; height: 440px' ></center>";
+        // echo "<p><center><b><Dein Körper wird es dir danken: mit diesem Wod hast du folgende Teile in Schwung gebracht: </b></center></p>";
         //   echo "<p>" . $body . " </p>";
-        // header("refresh:3; url=home.php");
+        header("refresh:3; url=home.php");
 
         echo "</div>";
     } else {

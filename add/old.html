@@ -176,3 +176,49 @@ card old
             </section>
             <!--Section: Content-->
          </div>
+
+
+         <!-- //old -->
+         <form action="day.php" method='post'>
+            <div class="window bild_beschriftung <?php echo $clicked ?>" id="<?php echo $day ?>">
+               <a href="day.php?dayId=<?php echo $day ?>"> <img class="caro <?php echo $clicked ?> " src="<?php echo $icon ?>" style="width: 150px; height: 150px; background-color: green" alt="icon"></a>
+               <span class='text-success erst'> </span>
+               <span class='text-light wod'"><?php echo $wodName ?></p>
+            <!-- <span class='text-light level'><?php echo $level ?></span> -->
+            <input type='hidden' name='dayId' value=<?php echo $day ?> />
+            <!-- <input class='btn btn-outline-success m-2' type='submit' value='Go!' />
+            <a href='home.php' class='btn btn-outline-warning'> Zurück</a>
+            <a href='day.php?dayId=<?php echo $day ?>' class='btn btn-outline-danger btn-sm'>now? </a> -->
+         </div>
+
+         <!-- <a href='day.php?dayId=<?php echo $day ?>' class='btn btn-outline-danger btn-sm'>now? </a> -->
+      </form>
+
+old ausgemistet
+
+<form action="day.php" method='post'>
+    <div class="window bild_beschriftung <?php echo $clicked ?>" id="<?php echo $day ?>">
+       <a href="day.php?dayId=<?php echo $day ?>"> <img class="caro <?php echo $clicked ?> " src="<?php echo $icon ?>" style="width: 150px; height: 150px; background-color: green" alt="icon"></a>
+       <span class='text-success erst'> </span>
+       <span class='text-light wod'"><?php echo $wodName ?></p>
+    <input type='hidden' name='dayId' value=<?php echo $day ?> />
+ </div>
+</form>
+
+
+      <!-- new Version -->
+      
+
+      echo "        <form action='day.php' method='post'>";
+        echo "     <div class='window bild_beschriftung <?php echo $clicked ?>' id='<?php echo $day ?>'>";
+        echo "        <a href='day.php?dayId=<?php echo $day ?>'> <img class='caro <?php echo $clicked ?> ' src='<?php echo $icon ?>' style='width: 150px; height: 150px; background-color: green' alt='icon'></a>";
+        echo "           <span class='text-success erst'> </span>";
+        echo "       <span class='text-light wod'><?php echo $wodName ?></p>";
+            echo "</form>";
+
+  geht net.. auch net mit \"           
+            echo "<form action='day.php' method='post'>";
+                echo "<div class=\"window bild_beschriftung <?php echo $clicked ?>' id='<?php echo $day ?>'>";
+                echo "<a href='day.php?dayId=<?php echo $day ?>'> <img class='caro <?php echo $clicked ?> ' src='<?php echo $icon ?>' style='width: 150px; height: 150px; background-color: green' alt='icon'></a>";
+                echo "<span class='text-light wod'\"><?php echo $wodName ?></p>";
+                echo "</form>";

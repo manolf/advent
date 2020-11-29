@@ -64,7 +64,7 @@ if (isset($_POST['btn-signup'])) {
       $passError = "Please enter password.";
    } else if (strlen($pass) < 6) {
       $error = true;
-      $passError = "Password must have atleast 6 characters.";
+      $passError = "Password must have at least 6 characters.";
    }
 
    // password hashing for security
@@ -77,8 +77,6 @@ if (isset($_POST['btn-signup'])) {
       $query = "INSERT INTO users(userName,userEmail,userPass) VALUES('$name','$email','$password')";
       $res = mysqli_query($conn, $query);
 
-
-      //building an empty calendar!
 
       if ($res) {
          $errTyp = "success";

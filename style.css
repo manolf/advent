@@ -29,7 +29,7 @@ body {
 }
 
 .jumbotron {
-  background: url("https://cdn.pixabay.com/photo/2016/03/31/15/03/background-1292962_960_720.png") * /
+  background: url("https://cdn.pixabay.com/photo/2016/03/31/15/03/background-1292962_960_720.png")
     no-repeat center center;
   /* background: darkgreen; */
   background-size: 100% 100%;
@@ -46,6 +46,18 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+.container-home {
+  display: flex;
+  /* flex-wrap: wrap; */
+  justify-content: space-between;
+}
+
+.container-let {
+  display: flex;
+  /* flex-wrap: wrap; */
+  justify-content: center;
 }
 
 .table-admin {
@@ -78,20 +90,17 @@ WINDOW-STYLING
   background-color: darkgreen !important;
 }
 
-.window {
-  width: 150px;
-  height: 150px;
-  /* background-color: white; */
-  margin: 1rem;
-  color: white;
-  font-size: 24px;
-}
-
 /* .notReady {
   background-color: white !important;
 } */
 
 .window {
+  width: 150px;
+  height: 150px;
+  background-color: green;
+  margin: 1rem;
+  /* color: red; */
+  font-size: 24px;
   -webkit-transition-duration: 1s;
   -moz-transition-duration: 1s;
   -o-transition-duration: 1s;
@@ -102,36 +111,18 @@ WINDOW-STYLING
   transition-property: transform;
 }
 
-.wrapper {
-  display: flex;
-  justify-content: space-around;
-}
-
-.left {
-  width: 66%;
-  display: flex;
-  align-items: center;
-}
-
-.right {
-  width: 33%;
-  display: flex;
-  align-items: center;
-  border: 1.4pt solid green;
-  border-radius: 5px;
-}
-
-.window.notReady:hover {
+.notReady:hover {
   transform: rotate(90deg);
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
+  transition: 1s;
 }
 
 .clicked {
   /* transform: scale(1.3); */
   /* width: 400px;
   height: 400px; */
-  background-color: white;
+  background-color: grey;
   border-radius: 5pt;
   /* border: 2pt solid green; */
   transition: 1s;
@@ -139,41 +130,27 @@ WINDOW-STYLING
 }
 
 .window.clicked p {
+  background-color: blue;
   color: black;
   font-size: 1rem;
 }
 
 .bild_beschriftung {
   position: relative;
+  color: black;
 }
 .caro {
   display: block;
+  background: red;
   /* background: rgb(240, 236, 187); */
   /* background: rgb(211, 25, 25); */
 }
 
-.erst {
-  position: absolute;
-  top: 0;
-  /* width: 400px;
-  color: #fff; */
-  text-align: center;
-  height: 2.5em;
-  /* line-height: 2.5em;
-  border-top: 1px solid #ababab; */
-  /* background: #404040; /* Fallback IE 6-8 */
-  /* background-color: rgba(40, 40, 40, 0.6);  */
-}
-
 .wod {
+  color: black;
   position: absolute;
   left: 5px;
   top: 40px;
-}
-.level {
-  position: absolute;
-  left: 0px;
-  top: 27px;
 }
 
 /* .window.show {
@@ -197,10 +174,30 @@ WINDOW-STYLING
 /******************************
 DAY
 ******************************/
+
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+.left {
+  width: 66%;
+  display: flex;
+  align-items: center;
+}
+
+.right {
+  width: 33%;
+  display: flex;
+  align-items: center;
+  border: 1.4pt solid green;
+  border-radius: 5px;
+}
+
 .container-day {
   /* background: white; */
   width: 60%;
-  border: 1 pt solid green;
+  /* border: 1pt solid green; */
 }
 
 .imageElf {
@@ -218,19 +215,36 @@ ERROR
 */
 
 .container-error {
-  width: 80%;
   display: flex;
-  flex-wrap: wrap;
-  /* background-color: blue; */
-  /* border: 1pt solid green; */
+  justify-content: center;
 }
 
-.error-text {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  align-items: center;
+.error {
+  width: 80%;
+  border: 2pt solid red;
 }
+
+/*
+=============== 
+Create Calendar
+===============
+*/
+
+.container-warning {
+  display: flex;
+  justify-content: center;
+}
+
+.warning {
+  width: 80%;
+  border: 2pt solid red;
+}
+
+/*
+=============== 
+MEDIA QUERIES
+===============
+*/
 
 @media (max-width: 500px) {
   .card {

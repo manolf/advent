@@ -14,26 +14,51 @@ Umbau day - wod (autofocus mobile version)
 Schrift Orsi
 fehlertext --> wod
 
+---fehler--- done
+ok verlinkungen instagram, elch mit brille orsi
+ok knie beuget euch (smiley)
+ok Hinweis bei Kalender: kein zertifizierter Trainer; alles aus dem Weg räumen; 
+  Kleinkinder und Hunde in Sicherheit bringen
+ok Fehlerseite stylen
+ok löschbefehl alle wods
+ok update Texte: siehe UPDATE LIST für days!
+KA??? hier ist dein workout Rahmen
+
 
 ----high prio----
 
-heute: nur kästchen größer Datum klickbar OK
-(nur Kästchen ohne wod klickbar)
-nicht klickbare: hover
-bei Klick: Fenster öffnet sich und bleibt (muss mit Kreuz geschlossen werden)
+kästchen
 wods wählbar -> SQL Abfrage liefert ein Wod mit diesen Parametern
 check: only present days are possible to open
-equipment aus der DB übernehmen --> animals?
+
 pagination workouts und rangliste 
 
 --orsi
-Warnhinweise Nichthaftung
 Kontaktseite - Team (graphics by.. )
 Footer
 
+utf8
+der 24.
+Mistel als Hero
+navleiste: rot (153, 0, 0);
+grün (102, 102, 51);
+geklickte Version: einfärbiger Hintergrund: rot oder grün
+index-seite 
+signin - datenschutzhinweis
 
-türchen: button -> div
-hintergrund
+
+Texte Tag updaten
+Abfragen: kettlebell/ gewicht: anpassen
+
+
+
+
+
+--mobile version
+login/register hero weg
+kästchen verkleinern
+toggle button
+
 
 db entries: harmonize - abfrage minutes
 dynamisches Übernehmen der Kategorien für wod-suche
@@ -44,14 +69,23 @@ Verlinkung Kalender
 Animation Opening
 SinglePage Türchen
 
+--new pages/components
+kontakt
+team
+impressum
+footer
+admin-charts
+
 
 
 ----low prio----
 imageicon elf in adressleiste
 Rangliste 
-choose your character
+choose your character: auswahl icon: icon mit sonnenbrille
+equipment aus der DB übernehmen
 
 
 eigene domäne und website
 instagram
 emailserver bei registration - newsletter?
+SEO

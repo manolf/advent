@@ -27,7 +27,7 @@ $today = date('d', time());
 
 //faked: 
 // $today = 6;
-echo "heute: " . $today;
+//echo "heute: " . $today;
 
 
 //to do check day and date! 
@@ -46,11 +46,11 @@ if ($_POST['dayId']) {
    $userId = $_SESSION['user'];
 
 
-   $sql = "SELECT * FROM wod 
+   echo $sql = "SELECT * FROM wod 
    inner join users on users.userId= wod.userId
    WHERE difficulty = $difficulty 
    and equipment like '%$equipment' 
-   and durationInMinutes < $durationInMinutes 
+   and durationInMinutes $durationInMinutes 
    and not exists (select *
                   from calendar c
                where c.wodId = wod.wodId
@@ -104,7 +104,7 @@ if ($_POST['dayId']) {
                </div>
                <div class="col-md-5 d-flex align-items-center mb-4">
                   <div>
-                     <h3 class="font-weight-bold mb-4"> Tag <?php echo $data2['dayId'] ?></h3>
+                     <h4 class="font-weight-bold mb-4"> Tag <?php echo $data2['dayId'] ?></h4>
                      <h6><?php echo $data2['text'] ?></h6>
                   </div>
                </div>
@@ -125,7 +125,7 @@ if ($_POST['dayId']) {
             <!-- <img src="./img/icon/pig.jpg" class="img-fluid mb-5" alt=""> -->
 
             <div>
-               <h3 class="font-weight-bold pb-3 " id="workout"> Hier ist dein Wod! </h3>
+               <h2 class="font-weight-bold pb-3 " id="workout"> Hier ist dein Wod! </h2>
 
                <div class="form-group">
 

@@ -50,6 +50,42 @@ $conn->close();
 
 
 <body>
+
+    <h1 class="text-success text-center mt-2 pb-3">Oh nein...was ist los?</h1>
+    <div class="container-error ">
+
+        <div class="error-text mx-auto">
+
+            <div class="pt-2">
+                <img src="https://cdn.pixabay.com/photo/2019/02/04/08/38/pixel-cells-3974187_960_720.png" style="width:320px; height:240px" alt="error">
+
+                <p class="pt-4">..es sieht so aus, als gäbe es kein Wod in der von dir gewünschten Selektion.
+            </div>
+            <div class="pt-2">
+                <h4 class="text-success">Bitte probier folgendes:</h4>
+                <br>
+                <ul>
+                    <li>Ändere die Kategorie: trau dich! </li>
+                    <li>Darfs ein bisserl mehr/weniger sein? Ändere die Workout-Minuten! </li>
+                    <li>Probier neues Equipment aus! Zum Beispiel: <br>du hast doch bestimmt eine Wand zuhause? Gib ihr eine Chance!</li>
+                </ul>
+                </p>
+
+
+                <form action='day.php' method='post'>
+
+
+
+                    <input type="hidden" name="dayId" value="<?php echo $dayId ?>" />
+                    <!-- <p><?php echo $dayId ?></p> -->
+                    <a href='day.php?dayId=<?php echo $dayId ?>' class='btn btn-outline-success btn-lg '> Ok, ich versuchs nochmal! </a> </span>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- 
     <h1 class="text-success mx-auto mt-2">Oh nein...</h1>
     <div class="container-error mt-5 mb-3">
 
@@ -73,13 +109,12 @@ $conn->close();
 
 
                 <form action='day.php' method='post'>
-                    <!-- <h5>Hurra, ich habe es geschafft!
-                  </h5> -->
+
 
 
                     <input type="hidden" name="dayId" value="<?php echo $dayId ?>" />
                     <!-- <p><?php echo $dayId ?></p> -->
-                    <a href='day.php?dayId=<?php echo $dayId ?>' class='btn btn-outline-success '> Ich versuchs nochmal! </a> </span>
+    <!-- <a href='day.php?dayId=<?php echo $dayId ?>' class='btn btn-outline-success '> Ich versuchs nochmal! </a> </span>
 
                 </form>
 
@@ -89,7 +124,7 @@ $conn->close();
 
         </div>
 
-    </div>
+    </div> -->
 </body>
 
 </html>

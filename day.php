@@ -34,7 +34,7 @@ $today = date('d', time());
 if ($_GET['dayId']) {
     $dayId = $_GET['dayId'];
 
-    echo "gotten dayId = " . $dayId;
+    //echo "gotten dayId = " . $dayId;
 
     $sql = "SELECT * FROM day WHERE dayId = $dayId";
 
@@ -49,6 +49,7 @@ if ($_GET['dayId']) {
 
     <head>
         <title>Welcome - <?php echo $userRow['userEmail']; ?></title>
+        <meta charset="UTF-8">
         <!-- <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="style.css">
@@ -94,7 +95,7 @@ if ($_GET['dayId']) {
                     <!-- <img src="./img/icon/pig.jpg" class="img-fluid mb-5" alt=""> -->
 
                     <form action="wod.php" method='post'>
-                        <h3 class="font-weight-bold pb-3">Aber nun... <br>Hol dir dein Workout! </h3>
+                        <h3 class="font-weight-bold pb-3"> <br>Hol dir dein Workout! </h3>
 
                         <div class="form-group">
                             <h5 class="pb-1">LEVEL:</h5>
@@ -109,44 +110,67 @@ if ($_GET['dayId']) {
 
                             <h5 class="pt-3 pb-1">DURATION:</h5>
                             <!-- <input type='text' name='durationInMinutes' placeholder='max Dauer in min' /></h5> -->
+
+                            <!-- Default inline 4-->
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="defaultInline4" name="durationInMinutes" value="< 300 " checked>
+                                <label class="custom-control-label" for="defaultInline4"> egal</label>
+                            </div>
+
+                            <!-- Default inline 5-->
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="defaultInline5" name="durationInMinutes" value="<= 5">
+                                <label class="custom-control-label" for="defaultInline5"> bis 5 min</label>
+                            </div>
+
                             <!-- Default inline 1-->
                             <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" class="custom-control-input" id="defaultInline1" name="durationInMinutes" value="10">
+                                <input type="radio" class="custom-control-input" id="defaultInline1" name="durationInMinutes" value=" <=10">
                                 <label class="custom-control-label" for="defaultInline1">
-                                    < 10 min</label> </div> <!-- Default inline 2-->
-                                        <div class="custom-control custom-radio custom-control-inline">
-                                            <input type="radio" class="custom-control-input" id="defaultInline2" name="durationInMinutes" value="20" checked>
-                                            <label class="custom-control-label" for="defaultInline2"> 10 - 20 min</label>
-                                        </div>
-
-                                        <!-- Default inline 3-->
-                                        <div class="custom-control custom-radio custom-control-inline">
-                                            <input type="radio" class="custom-control-input" id="defaultInline3" name="durationInMinutes" value="40">
-                                            <label class="custom-control-label" for="defaultInline3"> > 20 min</label>
-                                        </div>
+                                    bis 10 min</label> </div>
 
 
 
-                                        <h5 class="pt-3 pb-1">EQUIPMENT:</h5>
-                                        <!-- <input type='text' name='equipment' placeholder='bodyweight,  etc..' /> -->
-
-
-                                        <select class="custom-select mt-2 mb-2" name="equipment2">
-                                            <option selected>-- Bitte wählen --</option>
-                                            <option value="bodyweight" selected>bodyweight</option>
-                                            <option value="Springschnur">Springschnur</option>
-                                            <option value="Klimmzugstange">Klimmzugstange</option>
-                                            <option value="Dumbbell">Dumbbell</option>
-                                            <option value="Kettlebell">Kettlebell</option>
-                                        </select>
-
-                                        <input type="hidden" name="dayId" value="<?php echo $data['dayId'] ?>" />
-                                        <p><?php echo $data['dayId'] ?></p>
-
-                                        <input class="form-control btn btn-outline-success" type="submit" name="submit" value="ich hols mir" />
-
-                                        <a href="home.php" class="btn btn-outline-warning">Zurück</a>
+                            <!-- Default inline 2-->
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="defaultInline2" name="durationInMinutes" value="between 11 and 20">
+                                <label class="custom-control-label" for="defaultInline2"> 10 - 20 min</label>
                             </div>
+
+                            <!-- Default inline 3-->
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="defaultInline3" name="durationInMinutes" value="between 21 and 30 ">
+                                <label class="custom-control-label" for="defaultInline3"> > 21 - 30 min</label>
+                            </div>
+
+                            <!-- Default inline 6-->
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="defaultInline6" name="durationInMinutes" value="between 31 and 299 ">
+                                <label class="custom-control-label" for="defaultInline6"> > 30 min</label>
+                            </div>
+
+
+
+                            <h5 class="pt-3 pb-1">EQUIPMENT:</h5>
+                            <!-- <input type='text' name='equipment' placeholder='bodyweight,  etc..' /> -->
+
+
+                            <select class="custom-select mt-2 mb-2" name="equipment2">
+                                <option selected>-- Bitte wählen --</option>
+                                <option value="bodyweight" selected>bodyweight</option>
+                                <option value="Springschnur">Springschnur</option>
+                                <option value="Klimmzugstange">Klimmzugstange</option>
+                                <option value="box/steady chair, table/rings">Box/Sessel sowie Ringe/stabiler Tisch</option>
+                                <option value="Wand, Matte, Timer">Wand</option>
+                            </select>
+
+                            <input type="hidden" name="dayId" value="<?php echo $data['dayId'] ?>" />
+                            <!-- <p><?php echo $data['dayId'] ?></p> -->
+
+                            <input class="form-control btn btn-outline-success" type="submit" name="submit" value="ich hols mir" />
+                            <!-- 
+                                        <a href="home.php" class="btn btn-outline-warning">Zurück</a> -->
+                        </div>
                     </form>
                     <!-- </div> -->
                     <!--Grid column-->

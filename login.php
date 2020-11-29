@@ -121,7 +121,7 @@ if (isset($_POST['btn-login'])) {
             <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
 
 
-              <h2 class="text-success">Sign In.</h2>
+              <h2 class="text-success">Log In.</h2>
               <hr />
 
               <?php
@@ -143,7 +143,7 @@ if (isset($_POST['btn-login'])) {
 
               <span class="text-danger"><?php echo $passError; ?></span>
               <hr />
-              <button type="submit" name="btn-login">Sign In</button>
+              <button type="submit" name="btn-login">Log In</button>
 
 
               <hr />

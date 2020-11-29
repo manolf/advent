@@ -42,7 +42,7 @@ body {
 }
 
 .parallax_image {
-  background-image: url(img/parallax.png);
+  background-image: url(img/lichterkette.png);
   background-size: 100% 100%;
 }
 
@@ -86,6 +86,10 @@ body {
 
   .formular {
     width: 100%;
+  }
+
+  .parallax_image {
+    background-image: url(img/Rudolf.png);
   }
 }
 

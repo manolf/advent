@@ -14,6 +14,16 @@ Umbau day - wod (autofocus mobile version)
 Schrift Orsi
 fehlertext --> wod
 
+jumbotron:
+Mistel als Hero
+navleiste: rot (153, 0, 0);
+grün (102, 102, 51);
+
+mobile version
+login/register hero weg
+kästchen verkleinern
+toggle button
+
 ---fehler--- done
 ok verlinkungen instagram, elch mit brille orsi
 ok knie beuget euch (smiley)
@@ -24,57 +34,43 @@ ok löschbefehl alle wods
 ok update Texte: siehe UPDATE LIST für days!
 KA??? hier ist dein workout Rahmen
 
+---pages-- done
+login, register
+index,
+navbar
 
-----high prio----
+-----------------------
+----2 dos high prio----
 
-kästchen
-wods wählbar -> SQL Abfrage liefert ein Wod mit diesen Parametern
+kästchen: php steuerung: try: einfach 3 ifs statt javascript
 check: only present days are possible to open
+wods done: einfärbiger Hintergrund: rot oder grün
+Beschriftung 
+
+wods-> kategorie
+
 
 pagination workouts und rangliste 
 
---orsi
-Kontaktseite - Team (graphics by.. )
-Footer
 
-utf8
+--new pages/components
+kontakt
+team Team (graphics by.. )
+impressum & Datenschutz
+footer
+admin-charts
+about
+
+
+utf8: einfach utf Schreibweisen für DB 
 der 24.
-Mistel als Hero
-navleiste: rot (153, 0, 0);
-grün (102, 102, 51);
-geklickte Version: einfärbiger Hintergrund: rot oder grün
-index-seite 
-signin - datenschutzhinweis
+
 
 
 Texte Tag updaten
 Abfragen: kettlebell/ gewicht: anpassen
 
-
-
-
-
---mobile version
-login/register hero weg
-kästchen verkleinern
-toggle button
-
-
-db entries: harmonize - abfrage minutes
-dynamisches Übernehmen der Kategorien für wod-suche
-
-
-Begrüßungskarussel
-Verlinkung Kalender
-Animation Opening
-SinglePage Türchen
-
---new pages/components
-kontakt
-team
-impressum
-footer
-admin-charts
+SEO
 
 
 
@@ -82,10 +78,12 @@ admin-charts
 imageicon elf in adressleiste
 Rangliste 
 choose your character: auswahl icon: icon mit sonnenbrille
-equipment aus der DB übernehmen
 
+dynamisches Übernehmen der Kategorien für wod-suche
 
-eigene domäne und website
+---
+eigene domäne www.fitmithanno.fun
+server: hosttech.at
 instagram
 emailserver bei registration - newsletter?
-SEO
+

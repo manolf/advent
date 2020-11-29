@@ -1,5 +1,6 @@
 <?php require_once 'actions/db_connect.php';
 include('navbar.php');
+include('jumbotron.php');
 ?>
 
 
@@ -19,27 +20,7 @@ include('navbar.php');
 
 <body>
 
-    <!-- bootstrap version -->
-    <!-- <nav class="navbar sticky-top navbar-dark bg-dark">
-
-        <div class="mx-auto">
-            <a class="btn btn-outline-success" href="index.php" role="button">Home</a>
-            <a class="btn btn-outline-success" href="login.php" role="button">Login</a>
-            <a class="btn btn-outline-success" href="register.php" role="button">Signup</a>
-
-        </div>
-
-    </nav> -->
-
-    <div class="jumbotron jumbotron-fluid bg-dark text-white">
-        <div class="container">
-            <h1 class="display-4 text-success">Workout Adventkalender</h1>
-            <p class="lead">der sportliche Weg zum Christbaum</p>
-        </div>
-    </div>
-
-
-    <div class="container my-5 z-depth-1 rounded">
+    <div class=" container my-5 z-depth-1 rounded border">
         <!--Section: Content-->
         <section class="dark-grey-text">
 
@@ -47,50 +28,60 @@ include('navbar.php');
                 <div class="col-md-7 mb-4">
 
                     <div class="view">
-                        <img src='./img/boxjump.png' alt="boxjump" style="width: 472px; height: 482px" class="img-fluid mt-4 rounded" alt="smaple image">
+                        <img src='./img/gruener_elf.png' alt="boxjump" style="width: 533px; height: 740px" class="img-fluid rounded">
                     </div>
 
                 </div>
                 <div class="col-md-5 d-flex align-items-center mb-4">
                     <div>
 
-                        <h3 class="font-weight-bold mb-4"> HURRA...</h3>
+                        <h3 class="font-weight-bold mb-4"> Hereinspaziert...</i> </h3>
 
-                        <p>... bald ist soweit! Bald ist endlich Dezember und es wird ein sportlich besinnlicher Monat!
-                            <br><strong> Was solltest du noch wissen?</strong> Die Elfen lassen dir die Wahl! Du hast die Möglichkeit zwischen verschiedenen Levels zu wählen. <br></p>Bringt dich bereits die Vorstellung, von der Couch aufzustehen, ins Schwitzen, empfehlen wir Level <strong>easy</strong>, als durchschnittlich fitter Mensch solltest du <strong>intermediate</strong>, für <strong>hard</strong> klatschen wir dir auf den Rücken. <br>Besonders Wahnsinnige - also Leute, die es außergewöhnlich außergewöhnlich schätzen (insbesondere Crossfit-Wahnsinnige) werden mit der Kategorie <strong>crossfit</strong> glücklich.<br>
-                        Die Kategorie <strong>Hanni</strong> ist dem Wichtelvorbild und der BEST TEAMPARTNERIN Hanni gewidmet. <br> <strong>Achtung:</strong> gerade diese Workouts sind auch nicht für Sportmuffel gedacht..</p>
-                        <form action='' method='post'>
-                            <input class='btn btn-outline-light m-2' type='submit' name='openDoors' value='zu den Türchen..' />
-                        </form>
+                        <br>
 
-                        <?php
-                        if (isset($_POST["openDoors"])) {
+                        <p>... hier bist du genau richtig! <br></p>Für diesen außergewöhnlichen Advent bieten wir dir etwas gaaanz Besonderes an: einen auf dich und deine sportlichen Bedürfnisse individuell zugeschnittenen Adventskalender! <br>
+                        Jeden Tag - bis Weihnachten - öffnet sich ein Türchen - mit einem Workout <strong>ganz speziell für dich!</strong></p>
 
-                            echo "<p class='text-dark'> hab Geduld, Mensch! noch ist die Zeit nicht gekommen!</p>";
-                            echo "<p class='text-dark'> du kannst dich aber bereits registrieren: <a href='register.php' class='text-light'> bring me on!</a></p>";
-                        }
+                        <br>
+                        Und weißt du, was das beste daran ist? Du bist nicht alleine: du darfst den Elf Hanno bei seinem Weg zum sportlich-starken Helfer Santas begleiten! <br>Schau: er freut sich schon auf dich und schlägt bereits Räder:
 
-                        ?>
+                        Lass ihn nicht länger warten und registriere dich gleich!
+
+                        <a href="register.php" type="button" class="btn btn-outline-success mt-4">Super, bring me on!</a>
+
+
+
+                        <!-- <button type="button" class="btn btn-light btn-rounded mx-0 mb-2">zu den Türchen...</button> -->
+
                     </div>
-
-
                 </div>
-
             </div>
 
         </section>
         <!--Section: Content-->
-
     </div>
 
-    <div></div>
 
+    <div class="container-warning">
+        <section>
+
+            <div>
+                <img id="licht" src="./img/lichterkette.png" alt="radschlagender Hanno">
+            </div>
+
+        </section>
+    </div>
+
+
+    <?php
+    include('footer.php');
+    ?>
 
     <!-- <div class="container row col-lg-4 col-md-6 col-xs-12 mx-auto"> -->
     <!-- <div class="container row row-cols-sm-1 row-cols-md-2 row-cols-lg-3 mx-auto"> -->
     <!-- <div class="container row row-cols-md-2 row-cols-sm-2 row-cols-lg-3 row-col-xs-1 mx-auto"> -->
     <!--   <div class="container row row-cols-md-2 row-cols-lg-3 row-cols-xs-1 mx-auto"> -->
-    <div class="container">
+    <!-- <div class="container">
 
         <div class="window" id="1" style="background: white"><img src="./img/icon/1.png" style="width: 150px; height: 150px" alt="">
         </div>
@@ -120,7 +111,7 @@ include('navbar.php');
 
 
 
-    </div>
+    </div> -->
 
 </body>
 

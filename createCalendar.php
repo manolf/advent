@@ -66,19 +66,21 @@ if ($_POST) {
         <div class="container-warning">
             <section class="warning rounded pr-5 pl-5">
 
-                <h1 class="text-center mb-4 mt-4">Warnhinweis!</h1>
-                <h3>An dieser Stelle möchten wir gerne darauf hinweisen, dass wir <strong class="text-danger">keinerlei Haftung </strong>für etwaige Schäden und Verletzungen übernehmen, welche durch Mitmachen der Workouts - insbesondere durch eine mögliche Nachahmung von posierenden Elfen und Rentieren - entstehen könnten!
+                <h2 class="header-warn mb-4 mt-4">Warnhinweis!</h2>
+                <h5 class="text-warn">An dieser Stelle möchten wir darauf hinweisen, dass wir <strong class="text-danger">keinerlei Haftung </strong>für etwaige Schäden und Verletzungen übernehmen, welche durch Mitmachen der Workouts - insbesondere durch eine mögliche Nachahmung von posierenden Elfen und Rentieren - entstehen können!
                     <br>
                     <br> Bitte <strong class="text-danger"> vor </strong> den Workouts für genügend Raum sorgen (eventuelle störende Möbel aus dem Weg räumen), Kleinkinder und Tiere in Sicherheit bringen und ungeeignete Trainingsplätze (wie zum Beispiel Kreuzungen und Bahnübergänge, etc) meiden!
                     <br>
-                </h3>
+                </h5>
 
+
+                <a href="home.php" class="btn btn-outline-success mt-3 mb-3 text-center">Verstanden, ich passe auf!</a>
             </section>
         </div>
 
 <?php
 
-        header("refresh:3; url=home.php");
+
 
         echo "</div>";
     } else {

@@ -2,10 +2,10 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Advent, Advent..</title>
     <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
@@ -14,17 +14,60 @@
 
 
 
-    <nav class="navbar sticky-top navbar-dark bg-dark">
+    <nav class="navbar sticky-top navbar navbar-expand-sm navbar-dark" style="background-color: rgb(102, 102, 51)">
 
-        <div class="mx-auto">
-            <a class="btn btn-outline-danger" href="index.php" role="button">Home</a>
-            <a class="btn btn-outline-success" href="login.php" role="button">Login</a>
-            <a class="btn btn-outline-success" href="register.php" role="button">Signup</a>
+        <button class="navbar-toggler navbar-toggler-left btn-lg" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="container-nav collapse navbar-collapse" id="navbarTogglerDemo02">
+
+            <div class="navbar-left">
+                <img class="icon border" src="img/icon/rudolf_glasses.png" />
+
+            </div>
+
+            <ul class="navbar-nav">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php">home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link " href="about.php">about the workouts</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link " href="team.php">team</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link " href="contact.php">contact</a>
+                </li>
+
+
+            </ul>
+
+            <div class="navbar-right">
+                <ul class="navbar-nav">
+
+                    <li class="nav-item">
+                        <a class="nav-link " href="login.php">login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="signup.php">signup</a>
+                    </li>
+                </ul>
+            </div>
 
         </div>
 
     </nav>
 
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </body>
+
+
 
 </html>
